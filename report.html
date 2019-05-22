@@ -13911,8 +13911,7 @@ It is a ratio of true positives(words classified as spam, and which are actually
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Random Forest Model</p>
-<ul>
+<h1 id="Random-Forest-Model">Random Forest Model<a class="anchor-link" href="#Random-Forest-Model">&#182;</a></h1><ul>
 <li>Used in Decision tree algorithm approaches.  If a person asked many friends about a decision and bagged all of those decisions together...  The Random Forest model would apply.  Can also be used for both regression and classification tasks.</li>
 <li>The Random Forest model is flexible, easy to use, and most of the time will provide a great result without hyper-parameter tuning.</li>
 <li>The main weakness of Random Forest is that a large number of trees can make the algorithm slow and ineffective for real-time predictions.  The algorithms are usually fast to train but very slow to create predictions. </li>
@@ -13923,7 +13922,7 @@ It is a ratio of true positives(words classified as spam, and which are actually
 <li>A real world application of Gradient Boosting is anomaly detection in supervised learning settings where data is often highly unbalanced such as DNA sequences, credit card transactions, or cyber security.</li>
 <li>Since boosted trees are derived by optimizing an objective function, Gradient Boosting can be used to slove almost all objective function that we can write gradient out.</li>
 <li>Sensitive to overfitting.  Training takes longer because trees are built sequentially.  Harder to tune. </li>
-<li>Gradient Boosting will work quite well in making predictions and could compliment an RF model.</li>
+<li>The data we have is fairly large and clean so gradient boosting could be a good candidate.</li>
 </ul>
 <p>Logistic Regression</p>
 <ul>
@@ -14237,6 +14236,7 @@ Look at the graph at the bottom left from the cell above(the visualization creat
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Answer: </strong>  Out of the 3 models the best model for this dat is Gradient Boosting Classifier.  It not only takes the least prediction time but it also performs slightly better in terms of F-Score meaning it will have good results in terms of Recall and Precision</p>
+<p>A gradient boosting model is like a chain of decision trees that all make a vote towards the final decision.  Uniquely, with gradient boosting when a new decision tree is added it will try to improve the decision a little bit more towards what the rest of the chain already thinks.</p>
 
 </div>
 </div>
@@ -14530,7 +14530,19 @@ Final F-score on the testing data: 0.7467
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Answer:</strong>  I'm suprised to find marital status is a much more important feature than I expected and occupation has little relevence.</p>
+<p><strong>Answer:</strong></p>
+<ul>
+<li><p>marital-status VS capital-gain: marital-status makes a big difference.  Makes a lot of sense if we are looking at household income but we are not.  My guess would be that individuals who make less than $50,000 per year are less likely to get married.</p>
+</li>
+<li><p>capital-gain vs education: I was close. This confirms my thoughts that capital-gain would attribute towards income.</p>
+</li>
+<li><p>education vs occupation: Again I was right in assuming education would play a big roll.  My guess of occupation however is not even in the top 6.  I am very suprised by this as certain occupations have base incomes over $50,000.  This makes me question the accuracy of the data.</p>
+</li>
+<li><p>capital loss vs capital-loss: Right on the money. It makes sense that you make more if you lose more.</p>
+</li>
+<li><p>age vs age: correct again.  It is fair to assume that someone in their 40's would be making more than someone in their 20's.</p>
+</li>
+</ul>
 
 </div>
 </div>
